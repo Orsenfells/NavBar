@@ -1,0 +1,77 @@
+body {
+    display: block;
+    margin: 0;
+    background: #222;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --background: rgb(13, 204, 102);
+}
+header {
+    text-align: center;
+    background: var(--background);
+    position: fixed;
+    width: 100%;
+}
+.nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+.nav-toggle-label  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 2em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background:white;
+    width: 2em;
+    height: 2px;
+    border-radius: 2px;
+    position: relative;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+.nav-toggle-label span::before {
+    top: 7px;
+}
+.nav-toggle-label span::after {
+    bottom: 7px;
+}
+nav {
+    position: absolute;
+    text-align: left;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+}
